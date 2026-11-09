@@ -1,4 +1,4 @@
-import languageColors from './data/colors.json';
+const languageColors = await fetch('./data/colors.json').then(r => r.json())
 const form = document.getElementById('github-form')
 const searchbar = document.getElementById('github-username')
 
@@ -31,7 +31,7 @@ async function getGithub(username) {
 
         const totalStars = repos.reduce((total, repo) => total + repo.stargazers_count, 0)
 
-        showInfos(data.name, data.login, data.followers, data.public_repos, totalStars, data.location, data.avatar_url)
+        showInfos(data.name, data.login, data.followers, data.public_repos, totalStars, data.location, data.avatar_url, data.following, data.created_at)
         console.log(data)
         console.log(repos)
 
@@ -72,13 +72,17 @@ if (urlUsername) {
     getGithub(urlUsername)
 }
 
-function showInfos(name, username, followers, repos, stars, location, avatar) {
+function showInfos(name, username, followers, repos, stars, location, avatar, following, createdAt) {
     const profileAvatar = document.getElementById('profile-avatar')
     const profileName = document.getElementById('profile-name')
     const profileFollowers = document.getElementById('profile-followers')
     const profileRepos = document.getElementById('profile-repos')
     const profileLocation = document.getElementById('profile-location')
+    const profileFollowing = document.getElementById('profile-following')
+    const profileCreatedAt = document.getElementById('profile-created')
 
+    profileCreatedAt.textContent = `Compte crée le: ${new Date(createdAt).toLocaleDateString('fr-FR')}`
+    profileFollowing.textContent = `${following} following`
     profileAvatar.src = avatar
     profileName.textContent = name || username
     profileFollowers.textContent = `${followers} followers`
