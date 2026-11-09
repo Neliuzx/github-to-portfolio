@@ -23,6 +23,7 @@
     </nav>
 </header>
 <main>
+
     <section id="accueil">
         <h1>Mon univers de développement</h1>
         <p>
@@ -30,6 +31,7 @@
             Explorez mes projets, découvrez les technologies que j'utilise
             et suivez mon évolution en tant que développeur.
         </p>
+
 <form id="github-form">
     <label for="github-username">Nom d'utilisateur GitHub</label>
     <input
@@ -41,39 +43,29 @@
     >
     <button type="submit">Générer mon portfolio</button>
 </form>
+
 <div id="status-message" role="status" aria-live="polite"></div>
-</section>
-<!-- SECTION DU PROFIL GITHUB -->
+
 <section id="profil">
     <h2>Profil GitHub</h2>
-
     <div id="profile-info">
-
-        <!-- Photo de profil -->
         <img id="profile-avatar" src="" alt="Photo de profil GitHub">
-
-        <!-- Nom -->
         <h3 id="profile-name"></h3>
-
-        <!-- Biographie -->
         <p id="profile-bio"></p>
-
-        <!-- Localisation -->
         <p id="profile-location"></p>
-
-        <!-- Adresse e-mail -->
         <p id="profile-email"></p>
-
-        <!-- Statistiques GitHub -->
         <p id="profile-repos"></p>
         <p id="profile-followers"></p>
         <p id="profile-following"></p>
-
-        <!-- Date de création du compte -->
         <p id="profile-created"></p>
-
     </div>
 </section>
+
+<section id="projets">
+    <h2>Mes projets GitHub</h2>
+    <div id="repositories-container"></div>
+</section>
+
 </main>
 
 </body>
