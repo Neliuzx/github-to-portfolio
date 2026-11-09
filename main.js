@@ -1,8 +1,8 @@
-//import languageColors from './data/colors.json' with { type: 'json' }
-
-const form = document.getElementById('github-form')
-const searchbar = document.getElementById('github-username')
-
+import languageColors from './data/colors.json'
+const userState = {
+   includesForks: false,
+   language: 'all',
+}
 async function getGithub(username) {
     try {
         const r = await fetch(`https://api.github.com/users/${username}`)
@@ -36,20 +36,17 @@ async function getGithub(username) {
     }
 }
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-    const username = searchbar.value.trim()
-    if (!username) return
-
-    const url = new URL(window.location)
-    url.searchParams.set('username', username)
-    history.pushState({}, '', url)
-
-    getGithub(username)
-})
-
-const params = new URLSearchParams(window.location.search)
-const urlUsername = params.get('username')
+function filterRepos(repos, options) {
+    return repos.filter(repo =>{
+        if(!options.includesForks && repo.fork){
+            return false
+        }
+        if(options.language && options.language !== 'all' && repo.language !== options.language) {
+            return false
+        } 
+        return true
+    })   
+}
 
 if (urlUsername) {
     searchbar.value = urlUsername
