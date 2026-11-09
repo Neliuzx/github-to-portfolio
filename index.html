@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub to Portfolio</title>
+    <script src="main.js" defer></script>
+</head>
+<body>
+<header>
+    <nav aria-label="Navigation principale">
+        <ul>
+            <li>
+                <a href="#accueil">Accueil</a>
+            </li>
+            <li>
+                <a href="#profil">Profil</a>
+            </li>
+            <li>
+                <a href="#projets">Projets</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main>
+
+    <section id="accueil">
+        <h1>Mon univers de développement</h1>
+        <p>
+             Bienvenue sur mon portfolio GitHub.
+            Explorez mes projets, découvrez les technologies que j'utilise
+            et suivez mon évolution en tant que développeur.
+        </p>
+
+<form id="github-form">
+    <label for="github-username">Nom d'utilisateur GitHub</label>
+    <input
+        type="text"
+        id="github-username"
+        name="username"
+        placeholder="Entrez votre pseudo GitHub"
+        required
+    >
+    <button type="submit">Générer mon portfolio</button>
+</form>
+
+<div id="status-message" role="status" aria-live="polite"></div>
+
+<section id="profil">
+    <h2>Profil GitHub</h2>
+    <div id="profile-info">
+        <img id="profile-avatar" src="" alt="Photo de profil GitHub">
+        <h3 id="profile-name"></h3>
+        <p id="profile-bio"></p>
+        <p id="profile-location"></p>
+        <p id="profile-email"></p>
+        <p id="profile-repos"></p>
+        <p id="profile-followers"></p>
+        <p id="profile-following"></p>
+        <p id="profile-created"></p>
+    </div>
+</section>
+
+<section id="projets">
+    <h2>Mes projets GitHub</h2>
+    <div id="repositories-container"></div>
+</section>
+
+</main>
+
+</body>
+</html>

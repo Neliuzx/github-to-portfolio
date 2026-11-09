@@ -7,18 +7,29 @@ async function getGithub(username) {
     try {
         const r = await fetch(`https://api.github.com/users/${username}`)
 
-        if (!r.ok) {
-            showState('error')
+        if (r.status === 404) {
+            console.log('pseudo introuvable ou inexistant')
             return
         }
+        if (r.status === 403 || r.status === 429) {
+            console.log('quota API dépassé, réessayez plus tard')
+            return
+        }
+
         const data = await r.json()
-        const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=30&sort=updated&direction=desc`)
+        const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated&direction=desc`)
         const repos = await res.json()
 
-        console.log(repos)
+        if (repos.length === 0) {
+            console.log('aucun repo disponible pour cet utilisateur')
+            return
+        }
+
         console.log(data)
+        console.log(repos)
+
     } catch (error) {
-        console.log(error)
+        console.log('erreur réseau')
     }
 }
 
