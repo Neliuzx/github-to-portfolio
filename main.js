@@ -9,7 +9,7 @@ async function getGithub(username) {
             return
         }
         const data = await r.json()
-        const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=`)
+        const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=30&sort=updated&direction=desc`)
         const repos = await res.json()
 
         console.log(repos)
