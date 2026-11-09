@@ -7,6 +7,8 @@ const userState = {
     language: 'all',
 }
 
+let allRepos = [] 
+
 async function getGithub(username) {
     try {
         const r = await fetch(`https://api.github.com/users/${username}`)
@@ -23,6 +25,7 @@ async function getGithub(username) {
         const data = await r.json()
         const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated&direction=desc`)
         const repos = await res.json()
+        allRepos = repos
 
         if (repos.length === 0) {
             console.log('aucun repo disponible pour cet utilisateur')
