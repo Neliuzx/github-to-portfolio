@@ -1,6 +1,8 @@
 const languageColors = await fetch('./data/colors.json').then(r => r.json())
 const form = document.getElementById('github-form')
 const searchbar = document.getElementById('github-username')
+const forksCheckbox = document.getElementById('show-forks')
+const languageSelect = document.getElementById('language-filter')
 
 const userState = {
     includesForks: false,
@@ -41,6 +43,7 @@ async function getGithub(username) {
     } catch (error) {
         console.log('erreur réseau', error)
     }
+    return
 }
 
 function filterRepos(repos, options) {
@@ -92,3 +95,13 @@ function showInfos(name, username, followers, repos, stars, location, avatar, fo
     profileRepos.textContent = `${repos} repos publics : ${stars} stars`
     profileLocation.textContent = location || ''
 }
+
+forksCheckbox.addEventListener('change', (e) => {
+    userState.includesForks = e.target.checked
+    return
+})
+
+languageSelect.addEventListener('change', (e) => {
+    userState.language = e.target.value
+    return
+})
