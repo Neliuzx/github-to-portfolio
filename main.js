@@ -89,3 +89,5 @@ function showInfos(name, username, followers, repos, stars, location, avatar, fo
     profileRepos.textContent = `${repos} repos publics : ${stars} stars`
     profileLocation.textContent = location || ''
 }
+
+//test
