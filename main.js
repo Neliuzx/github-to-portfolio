@@ -97,6 +97,13 @@ function showInfos(name, username, followers, repos, stars, location, avatar, fo
     profileLocation.textContent = location || ''
 }
 
+function displayRepositories(repos) {
+    const container = document.getElementById('repositories-container')
+container.innerHTML = ''
+
+}
+
+
 forksCheckbox.addEventListener('change', (e) => {
     userState.includesForks = e.target.checked
     return
