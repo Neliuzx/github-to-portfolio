@@ -1,0 +1,36 @@
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;  
+        text-align: center;  
+    }
+}
+#repos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem; 
+    padding: 1rem;
+}
+
+.repo-card {
+    background: #fff; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input, select, button {
+    max-width: 100%;
+    box-sizing: border-box; 
+}
