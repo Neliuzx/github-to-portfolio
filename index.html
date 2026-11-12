@@ -66,6 +66,35 @@
     <h2>Mes projets GitHub</h2>
     <div id="repositories-container"></div>
 </section>
+<section id="projets">
+    <h2>Mes projets GitHub</h2>
+    <div id="repositories-container"></div>
+
+    <div>
+        <label for="language-filter">Filtrer par langage :</label>
+        <select id="language-filter">
+            <option value="all">Tous les langages</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="PHP">PHP</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+        </select>
+    </div>
+</section>
+
+<template id="repository-template">
+    <article class="repository-card">
+        <h3 class="repository-name"></h3>
+        <p class="repository-description"></p>
+        <p class="repository-language"></p>
+        <a class="repository-code-link" target="_blank" rel="noopener noreferrer">
+            Voir le code
+        </a>
+        <a class="repository-demo-link" target="_blank" rel="noopener noreferrer">
+            Voir la démo
+        </a>
+    </article>
+</template>
 
 </main>
 <footer>
