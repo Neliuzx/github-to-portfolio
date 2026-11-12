@@ -3,6 +3,7 @@ const form = document.getElementById('github-form')
 const searchbar = document.getElementById('github-username')
 const forksCheckbox = document.getElementById('show-forks')
 const languageSelect = document.getElementById('language-filter')
+const statusMsg = document.getElementById('status-message')
 
 const userState = {
     includesForks: false,
@@ -16,11 +17,11 @@ async function getGithub(username) {
         const r = await fetch(`https://api.github.com/users/${username}`)
 
         if (r.status === 404) {
-            console.log('pseudo introuvable ou inexistant')
+            statusMsg.textContent = 'Pseudo introuvable ou inexistant'
             return
         }
         if (r.status === 403 || r.status === 429) {
-            console.log('quota API dépassé, réessayez plus tard')
+            statusMsg.textContent = 'Quota API dépassé, réessayez plus tard'
             return
         }
 
@@ -30,7 +31,7 @@ async function getGithub(username) {
         allRepos = repos
 
         if (repos.length === 0) {
-            console.log('aucun repo disponible pour cet utilisateur')
+            statusMsg.textContent = 'Aucun repo disponible pour cet utilisateur'
             return
         }
 
