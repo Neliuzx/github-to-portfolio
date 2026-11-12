@@ -98,9 +98,12 @@ function showInfos(name, username, followers, repos, stars, location, avatar, fo
 }
 
 function displayRepositories(repos) {
-    const container = document.getElementById('repositories-container')
-container.innerHTML = ''
-
+ const container = document.getElementById('repositories-container')
+ container.innerHTML = ''
+ const template = document.getElementById('repository-template')
+ repos.forEach(repo => {
+  const card = template.content.cloneNode(true)
+})
 }
 
 
