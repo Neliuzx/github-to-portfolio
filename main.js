@@ -29,6 +29,7 @@ async function getGithub(username) {
         const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated&direction=desc`)
         const repos = await res.json()
         allRepos = repos
+        displayRepositories(repos)
 
         if (repos.length === 0) {
             statusMsg.textContent = 'Aucun repo disponible pour cet utilisateur'
@@ -103,6 +104,19 @@ function displayRepositories(repos) {
  const template = document.getElementById('repository-template')
  repos.forEach(repo => {
   const card = template.content.cloneNode(true)
+  card.querySelector('.repository-name').textContent = repo.name
+  card.querySelector('.repository-description').textContent = repo.description || 'Aucune description disponible'
+  card.querySelector('.repository-language').textContent = repo.language || 'Langage non précisé'
+  card.querySelector('.repository-code-link').href = repo.html_url
+
+  const demoLink = card.querySelector('.repository-demo-link')
+  if (repo.homepage) {
+    demoLink.href = repo.homepage
+} else {
+    demoLink.hidden = true
+}
+
+container.appendChild(card)
 })
 }
 
