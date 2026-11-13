@@ -1,0 +1,26 @@
+{
+  "name": "github-to-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neliuzx/github-to-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neliuzx/github-to-portfolio/issues"
+  },
+  "homepage": "https://github.com/Neliuzx/github-to-portfolio#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0"
+  }
+}
