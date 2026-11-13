@@ -76,3 +76,105 @@ nav a {
 nav a:hover {
     color: #58a6ff;
 }
+
+#accueil {
+    text-align: center;
+    padding: 70px 20px;
+    background-color: #ffffff;
+}
+
+#accueil h1 {
+    font-size: 36px;
+    color: #24292f;
+    margin-bottom: 15px;
+}
+
+#accueil p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 17px;
+    color: #586069;
+}
+
+#github-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+#github-form label {
+    font-weight: bold;
+    color: #24292f;
+}
+
+#github-form input[type="text"],
+#github-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#github-form input[type="checkbox"] {
+    accent-color: #24292f;
+}
+
+#github-form button {
+    width: 100%;
+    padding: 13px;
+    background-color: #24292f;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#github-form button:hover {
+    background-color: #0969da;
+}
+
+#profil {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#profil h2 {
+    color: #24292f;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+#profile-info {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+#profile-avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+#profile-name {
+    color: #24292f;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+#profile-info p {
+    color: #586069;
+    margin: 8px 0;
+}
