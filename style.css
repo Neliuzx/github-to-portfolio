@@ -178,3 +178,58 @@ nav a:hover {
     color: #586069;
     margin: 8px 0;
 }
+
+#projets {
+    padding: 50px 20px;
+}
+
+#projets h2 {
+    text-align: center;
+    color: #24292f;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+#repositories-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.repository-card {
+    background-color: #ffffff;
+    border: 1px solid #d1d5da;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.repository-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.repository-card h3 {
+    color: #0969da;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.repository-card p {
+    color: #586069;
+}
+
+.repository-card a {
+    display: inline-block;
+    margin: 8px 8px 0 0;
+    color: #0969da;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.repository-card a:hover {
+    text-decoration: underline;
+}
