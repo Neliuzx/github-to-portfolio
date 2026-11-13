@@ -33,7 +33,7 @@
             et suivez mon évolution en tant que développeur.
         </p>
 
-<form id="github-form">
+<form id="github-form" method="get">
     <label for="github-username">Nom d'utilisateur GitHub</label>
     <input
         type="text"
@@ -42,6 +42,15 @@
         placeholder="Entrez votre pseudo GitHub"
         required
     >
+     <select id="language-filter">
+            <option value="all">Tous les langages</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="PHP">PHP</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+        </select>
+        <input type="checkbox" name="forks" id="shows-forks">
+        <label for="shows-forks">forks</label>
     <button type="submit">Générer mon portfolio</button>
 </form>
 
@@ -61,25 +70,9 @@
         <p id="profile-created"></p>
     </div>
 </section>
-
 <section id="projets">
     <h2>Mes projets GitHub</h2>
     <div id="repositories-container"></div>
-</section>
-<section id="projets">
-    <h2>Mes projets GitHub</h2>
-    <div id="repositories-container"></div>
-
-    <div>
-        <label for="language-filter">Filtrer par langage :</label>
-        <select id="language-filter">
-            <option value="all">Tous les langages</option>
-            <option value="JavaScript">JavaScript</option>
-            <option value="PHP">PHP</option>
-            <option value="HTML">HTML</option>
-            <option value="CSS">CSS</option>
-        </select>
-    </div>
 </section>
 
 <template id="repository-template">
