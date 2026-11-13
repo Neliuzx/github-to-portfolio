@@ -1,7 +1,7 @@
 const languageColors = await fetch('./data/colors.json').then(r => r.json())
 const form = document.getElementById('github-form')
 const searchbar = document.getElementById('github-username')
-const forksCheckbox = document.getElementById('show-forks')
+const forksCheckbox = document.getElementById('shows-forks')
 const languageSelect = document.getElementById('language-filter')
 const statusMsg = document.getElementById('status-message')
 
