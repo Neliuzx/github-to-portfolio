@@ -95,3 +95,47 @@ nav a:hover {
     font-size: 17px;
     color: #586069;
 }
+
+#github-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+#github-form label {
+    font-weight: bold;
+    color: #24292f;
+}
+
+#github-form input[type="text"],
+#github-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#github-form input[type="checkbox"] {
+    accent-color: #24292f;
+}
+
+#github-form button {
+    width: 100%;
+    padding: 13px;
+    background-color: #24292f;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#github-form button:hover {
+    background-color: #0969da;
+}
