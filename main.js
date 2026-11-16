@@ -116,7 +116,7 @@ function displayRepositories(repos) {
         if (repo.homepage) {
             demoLink.href = repo.homepage
         } else {
-            demoLink.hidden = true
+            demoLink.remove()
         }
 
         container.appendChild(card)
