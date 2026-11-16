@@ -152,3 +152,12 @@ if (urlUsername) {
     searchbar.value = urlUsername
     getGithub(urlUsername)
 }
+
+const currentUrl = window.location.href;
+const linkedinBtn = document.getElementById('share-linkedin');
+const facebookBtn = document.getElementById('share-facebook');
+
+if (linkedinBtn && facebookBtn) {
+    linkedinBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`;
+    facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
+}
