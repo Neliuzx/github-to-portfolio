@@ -143,6 +143,16 @@ nav a:hover {
 #profil {
     padding: 50px 20px;
     text-align: center;
+
+}
+
+.profile-desc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 }
 
 #profil h2 {

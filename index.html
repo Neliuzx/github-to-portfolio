@@ -49,25 +49,28 @@
             <option value="HTML">HTML</option>
             <option value="CSS">CSS</option>
         </select>
-        <input type="checkbox" name="forks" id="show-forks">
+        <input type="checkbox" name="forks" id="shows-forks">
         <label for="shows-forks">forks</label>
     <button type="submit">Générer mon portfolio</button>
 </form>
 
 <div id="status-message" role="status" aria-live="polite"></div>
+<h2>Profil GitHub</h2>
 
 <section id="profil">
-    <h2>Profil GitHub</h2>
     <div id="profile-info">
         <img id="profile-avatar" src="" alt="Photo de profil GitHub">
-        <h3 id="profile-name"></h3>
-        <p id="profile-bio"></p>
-        <p id="profile-location"></p>
-        <p id="profile-email"></p>
-        <p id="profile-repos"></p>
-        <p id="profile-followers"></p>
-        <p id="profile-following"></p>
-        <p id="profile-created"></p>
+        <div class="profile-desc">
+            <h3 id="profile-name"></h3>
+            <p id="profile-bio"></p>
+            <p id="profile-location"></p>
+            <p id="profile-email"></p>
+            <p id="profile-repos"></p>
+            <p id="profile-followers"></p>
+            <p id="profile-following"></p>
+            <p id="profile-created"></p>
+        </div>
+
     </div>
 </section>
 <section id="projets">
