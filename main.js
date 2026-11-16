@@ -96,16 +96,6 @@ function showInfos(name, username, followers, repos, stars, location, avatar, fo
     profileFollowers.textContent = `${followers} followers`
     profileRepos.textContent = `${repos} repos publics : ${stars} stars`
     profileLocation.textContent = location || ''
-
-    // Mise à jour dynamique des boutons de partage avec l'URL actuelle
-    const currentUrl = window.location.href;
-    const linkedinBtn = document.getElementById('share-linkedin');
-    const facebookBtn = document.getElementById('share-facebook');
-
-    if (linkedinBtn && facebookBtn) {
-        linkedinBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`;
-        facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
-    }
 }
 
 function displayRepositories(repos) {
@@ -161,4 +151,25 @@ const urlUsername = params.get('username')
 if (urlUsername) {
     searchbar.value = urlUsername
     getGithub(urlUsername)
+}
+
+// Logique pour le bouton de copie du lien dans le presse-papier
+const copyBtn = document.getElementById('share-copy-btn')
+const copyFeedback = document.getElementById('copy-feedback')
+
+if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+        try {
+            const currentUrl = window.location.href
+            await navigator.clipboard.writeText(currentUrl)
+
+            copyFeedback.style.display = 'block'
+
+            setTimeout(() => {
+                copyFeedback.style.display = 'none'
+            }, 2000)
+        } catch (err) {
+            console.error('Erreur lors de la copie du lien :', err)
+        }
+    })
 }
