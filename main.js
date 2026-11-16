@@ -60,14 +60,6 @@ function filterRepos(repos, options) {
     })
 }
 
-function getLanguageColor(language) {
-    const value = languageColors[language]
-    if (!value) return null
-    if (typeof value === 'string') return value
-    return value.color
-}
-
-
 function updateLanguageOptions() {
     const languages = [...new Set(allRepos.map(repo => repo.language).filter(Boolean))].sort()
 
@@ -107,18 +99,15 @@ function displayRepositories(repos) {
         const card = template.content.cloneNode(true)
         card.querySelector('.repository-name').textContent = repo.name
         card.querySelector('.repository-description').textContent = repo.description || 'Aucune description disponible'
-        const languageEl = card.querySelector('.repository-language')
-        languageEl.textContent = repo.language || 'Langage non précisé'
-        languageEl.style.color = getLanguageColor(repo.language)
+        card.querySelector('.repository-language').textContent = repo.language || 'Langage non précisé'
         card.querySelector('.repository-code-link').href = repo.html_url
 
         const demoLink = card.querySelector('.repository-demo-link')
         if (repo.homepage) {
             demoLink.href = repo.homepage
         } else {
-            demoLink.hidden = true
+            demoLink.remove()
         }
-
         container.appendChild(card)
     })
 }
