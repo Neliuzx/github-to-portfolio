@@ -97,6 +97,7 @@ function showInfos(name, username, followers, repos, stars, location, avatar, fo
     profileRepos.textContent = `${repos} repos publics : ${stars} stars`
     profileLocation.textContent = location || ''
 
+    // Mise à jour dynamique des boutons de partage avec l'URL actuelle
     const currentUrl = window.location.href;
     const linkedinBtn = document.getElementById('share-linkedin');
     const facebookBtn = document.getElementById('share-facebook');
@@ -125,7 +126,7 @@ function displayRepositories(repos) {
         if (repo.homepage) {
             demoLink.href = repo.homepage
         } else {
-            demoLink.hidden = true
+            demoLink.remove()
         }
 
         container.appendChild(card)
