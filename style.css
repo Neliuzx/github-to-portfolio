@@ -1,7 +1,9 @@
 .profile-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 2rem;
+    text-align: left;
 }
 
 @media (max-width: 768px) {
@@ -148,7 +150,7 @@ nav a:hover {
 #profil h2 {
     color: #24292f;
     font-size: 28px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 #profile-info {
@@ -158,6 +160,10 @@ nav a:hover {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
 }
 
 #profile-avatar {
@@ -171,12 +177,12 @@ nav a:hover {
 #profile-name {
     color: #24292f;
     font-size: 24px;
-    margin: 10px 0;
+    margin: 3px 0;
 }
 
 #profile-info p {
     color: #586069;
-    margin: 8px 0;
+    margin: 2px 0;
 }
 
 #projets {
