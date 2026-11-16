@@ -287,39 +287,25 @@ footer a:hover {
     gap: 8px;
 }
 
-.share-container span {
-    font-size: 14px;
-    color: #586069;
-    font-weight: bold;
-}
-
-.share-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.share-btn {
-    display: inline-block;
-    padding: 8px 16px;
+.share-btn.copy-btn {
+    background-color: #24292f;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
     border-radius: 6px;
-    color: #ffffff;
-    text-decoration: none;
     font-size: 14px;
     font-weight: bold;
-    transition: opacity 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.share-btn:hover {
-    opacity: 0.9;
+.share-btn.copy-btn:hover {
+    background-color: #0969da;
     transform: translateY(-2px);
-    color: #ffffff;
-    text-decoration: none;
 }
 
-.share-btn.linkedin {
-    background-color: #0a66c2;
-}
-
-.share-btn.facebook {
-    background-color: #1877f2;
+.copy-feedback {
+    font-size: 13px;
+    color: #2da44e; /* Vert succès */
+    font-weight: bold;
 }
