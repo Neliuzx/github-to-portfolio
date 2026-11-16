@@ -96,6 +96,15 @@ function showInfos(name, username, followers, repos, stars, location, avatar, fo
     profileFollowers.textContent = `${followers} followers`
     profileRepos.textContent = `${repos} repos publics : ${stars} stars`
     profileLocation.textContent = location || ''
+
+    const currentUrl = window.location.href;
+    const linkedinBtn = document.getElementById('share-linkedin');
+    const facebookBtn = document.getElementById('share-facebook');
+
+    if (linkedinBtn && facebookBtn) {
+        linkedinBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`;
+        facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
+    }
 }
 
 function displayRepositories(repos) {
@@ -151,13 +160,4 @@ const urlUsername = params.get('username')
 if (urlUsername) {
     searchbar.value = urlUsername
     getGithub(urlUsername)
-}
-
-const currentUrl = window.location.href;
-const linkedinBtn = document.getElementById('share-linkedin');
-const facebookBtn = document.getElementById('share-facebook');
-
-if (linkedinBtn && facebookBtn) {
-    linkedinBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`;
-    facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
 }
